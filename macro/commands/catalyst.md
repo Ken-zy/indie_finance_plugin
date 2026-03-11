@@ -45,7 +45,7 @@ allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, We
 
 ## Output
 
-- **Primary**: `Catalyst_Calendar_{YYYYMMDD}.md`
+- **Primary**: `YYYYMMDD-catalyst-calendar.md`
 - 日历表格 + Weekly Preview
 
 ## Quality Checklist

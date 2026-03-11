@@ -105,8 +105,9 @@ Write a brief Markdown summary:
 
 ## Output
 
-- **Primary**: `{Ticker}_DCF_{YYYYMMDD}.xlsx` — full model with live formulas
+- **Primary**: `YYYYMMDD-dcf-{Ticker}.xlsx` — full model with live formulas
 - **Secondary**: Markdown executive summary
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Quality Checklist
 

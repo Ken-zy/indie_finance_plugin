@@ -96,8 +96,9 @@ Structure (8-12 pages):
 
 ## Output
 
-- **Primary**: `{Ticker}_Q{Quarter}_{Year}_Earnings_Update.md` — full report with embedded charts
+- **Primary**: `YYYYMMDD-earnings-{Ticker}.md` — full report with embedded charts
 - **Secondary**: Updated estimate table (can be separate .xlsx if requested)
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Citation Requirements
 

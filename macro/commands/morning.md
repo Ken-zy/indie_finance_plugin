@@ -46,7 +46,7 @@ allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, We
 
 ## Output
 
-- **Primary**: `Morning_Note_{YYYYMMDD}.md` 或对话中直接显示
+- **Primary**: `YYYYMMDD-morning-note.md` 或对话中直接显示
 - 保持 1 页以内
 - 有观点 — 只转述不给观点的晨报没有价值
 

@@ -54,7 +54,7 @@ Always annotate: "Source: [source name]" on each data point.
 
 ## Output
 
-- **Primary**: `{Protocol}_DeFi_Analysis_{YYYYMMDD}.md`
+- **Primary**: `YYYYMMDD-defi-{Protocol}.md`
 - Footer: 数据来源、数据时间戳、免责声明
 
 ## Quality Checklist

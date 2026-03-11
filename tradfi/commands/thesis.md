@@ -89,9 +89,10 @@ Provide a clear verdict:
 
 ## Output
 
-- **Primary**: `{Ticker}_Thesis_{YYYYMMDD}.md` — complete thesis document
+- **Primary**: `YYYYMMDD-thesis-{Ticker}.md` — complete thesis document
 - Suitable for: morning meeting, portfolio review, risk committee presentation
 - Format: Concise Markdown with scorecard, recent updates, conviction level
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Quality Checklist
 

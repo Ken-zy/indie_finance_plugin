@@ -121,8 +121,9 @@ For each idea that passes the screen:
 
 ## Output
 
-- **Primary**: `Screen_{Type}_{Sector}_{YYYYMMDD}.md` — full screen results with idea summaries
+- **Primary**: `YYYYMMDD-screen-{Type}-{Sector}.md` — full screen results with idea summaries
 - **Secondary**: Comparison table (can be .xlsx if >10 names)
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Quality Checklist
 

@@ -7,7 +7,7 @@ description: Update financial models with new data — quarterly earnings, manag
 ### Layer 1: MCP
 1. **yahoo-finance** — Latest earnings data, financial statements, analyst estimates
 2. **financial-modeling-prep** — Detailed estimates, consensus data
-3. **alpha-vantage** — Earnings calendar, supplementary data
+3. **alpha-vantage** — Earnings call transcripts, technical indicators only (25次/天 limit)
 
 ### Layer 2: Web Search
 - Company IR pages for press releases

@@ -28,7 +28,7 @@ Follow the three-layer fallback strategy:
 ### Layer 1: MCP Data Sources (preferred)
 1. **yahoo-finance** — Primary: stock quotes, key statistics, financial statements, company info
 2. **financial-modeling-prep** — Secondary: detailed financials, ratios, enterprise value, peer comparison
-3. **alpha-vantage** — Tertiary: technical indicators, additional fundamentals
+3. **alpha-vantage** — Tertiary: technical indicators only (25次/天 limit)
 
 ### Layer 2: Web Search
 - finance.yahoo.com, macrotrends.net for financial data

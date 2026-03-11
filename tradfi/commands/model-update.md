@@ -99,13 +99,14 @@ If user provides an existing .xlsx model:
 - Update input cells with new actuals
 - Adjust assumption drivers
 - Verify all formulas recalculate correctly
-- Save as new version: `{Ticker}_Model_v{N}_{YYYYMMDD}.xlsx`
+- Save as new version: `YYYYMMDD-model-{Ticker}-v{N}.xlsx`
 
 ## Output
 
 - **Primary**: Updated Excel model (if user provides existing model)
-- **Secondary**: `{Ticker}_Estimate_Update_{YYYYMMDD}.md` — estimate change summary with valuation impact
+- **Secondary**: `YYYYMMDD-model-update-{Ticker}.md` — estimate change summary with valuation impact
 - Updated price target derivation
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Quality Checklist
 

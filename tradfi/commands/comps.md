@@ -89,8 +89,9 @@ Add a Notes section (separate sheet or below data) documenting:
 
 ## Output
 
-- **Primary**: `{Target}_Comps_{YYYYMMDD}.xlsx` — full comps table with formulas
+- **Primary**: `YYYYMMDD-comps-{Target}.xlsx` — full comps table with formulas
 - **Secondary**: Brief Markdown summary with key findings (median multiples, where target sits vs peers)
+- **Footer**: 数据来源、数据时间（截至 YYYY-MM-DD HH:MM）、免责声明
 
 ## Quality Checklist
 

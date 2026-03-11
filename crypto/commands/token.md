@@ -55,7 +55,7 @@ Always annotate: "Source: [source name]" on each data point.
 
 ## Output
 
-- **Primary**: `{Symbol}_Token_Analysis_{YYYYMMDD}.md`
+- **Primary**: `YYYYMMDD-token-{Symbol}.md`
 - Footer: 数据来源、数据时间戳、免责声明
 
 ## Quality Checklist

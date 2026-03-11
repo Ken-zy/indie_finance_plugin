@@ -47,7 +47,7 @@ Always annotate: "Source: [source name]" on each data point.
 
 ## Output
 
-- **Primary**: `Macro_Dashboard_{YYYYMMDD}.md`
+- **Primary**: `YYYYMMDD-macro-dashboard.md`
 - Footer: 数据来源、FRED 系列 ID、数据时间戳
 
 ## Quality Checklist
