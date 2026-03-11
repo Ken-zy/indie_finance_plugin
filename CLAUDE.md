@@ -4,15 +4,16 @@
 
 ## 插件架构
 
-本项目是一个 Claude Code 插件市场，包含三个子插件：
+本项目是一个 Claude Code 插件市场，包含四个子插件：
 
 | 子插件 | 命令 | 数据源 |
 |--------|------|--------|
-| `tradfi` | `/comps` `/dcf` `/earnings` `/screen` | Yahoo Finance, Alpha Vantage, FMP |
+| `tradfi` | `/comps` `/dcf` `/earnings` `/screen` `/thesis` `/model-update` `/debug-model` | Yahoo Finance, Alpha Vantage, FMP |
 | `crypto` | `/token` `/defi` `/airdrop` `/onchain` | CoinGecko, DefiLlama, Dune |
 | `macro` | `/macro` | FRED, DefiLlama, CoinGecko |
+| `portfolio` | `/rebalance` `/tlh` | Yahoo Finance |
 
-另有 `news-digest` 自动触发 skill（无独立命令），在用户提到公司/代币时自动补充最新新闻。
+另有自动触发 skill（无独立命令）：`news-digest`（新闻补充）、`competitive-analysis`（竞争分析）、`audit-xls`（电子表格审计）、`idea-generation`（投资想法筛选）。
 
 ## 三层 Fallback 策略
 

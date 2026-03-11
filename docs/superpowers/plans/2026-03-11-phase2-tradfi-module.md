@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Fork 5 official skills and 4 commands from Anthropic financial-services-plugins into the tradfi sub-plugin, adapting all data source references from paid MCP to free alternatives.
+**Goal:** Fork 9 official skills and create 7 commands for the tradfi sub-plugin, adapting all data source references from paid MCP to free alternatives.
 
 **Architecture:** Pure markdown plugin — no compiled code. Skills are markdown files that Claude loads automatically. Commands are markdown files users invoke via `/tradfi:command`. The only Python code is `validate_dcf.py` for DCF model validation. All data source references in skills must be rewritten from paid sources (Daloopa, Morningstar, S&P Kensho, FactSet, Moody's, etc.) to free sources (yahoo-finance, alpha-vantage, fmp) with three-layer fallback.
 
@@ -29,7 +29,10 @@ tradfi/
 │   ├── comps.md                   # CREATE - fork from financial-analysis/commands/comps.md
 │   ├── dcf.md                     # CREATE - fork from financial-analysis/commands/dcf.md
 │   ├── earnings.md                # CREATE - fork from equity-research/commands/earnings.md
-│   └── screen.md                  # CREATE - fork from equity-research/commands/screen.md
+│   ├── screen.md                  # CREATE - fork from equity-research/commands/screen.md
+│   ├── thesis.md                  # CREATE - fork from equity-research/commands/thesis.md
+│   ├── model-update.md            # CREATE - fork from equity-research/commands/model-update.md
+│   └── debug-model.md             # CREATE - fork from financial-analysis/commands/debug-model.md
 └── skills/
     ├── comps-analysis/
     │   └── SKILL.md               # CREATE - fork from financial-analysis/skills/comps-analysis/SKILL.md
@@ -50,8 +53,16 @@ tradfi/
     │   └── references/
     │       ├── frameworks.md      # CREATE - copy from official
     │       └── schemas.md         # CREATE - copy from official
-    └── clean-data-xls/
-        └── SKILL.md               # CREATE - copy from official (no data source refs)
+    ├── clean-data-xls/
+    │   └── SKILL.md               # CREATE - copy from official (no data source refs)
+    ├── idea-generation/
+    │   └── SKILL.md               # CREATE - fork from equity-research/skills/idea-generation/SKILL.md
+    ├── thesis-tracker/
+    │   └── SKILL.md               # CREATE - fork from equity-research/skills/thesis-tracker/SKILL.md
+    ├── audit-xls/
+    │   └── SKILL.md               # CREATE - fork from financial-analysis/skills/audit-xls/SKILL.md
+    └── model-update/
+        └── SKILL.md               # CREATE - fork from equity-research/skills/model-update/SKILL.md
 ```
 
 ## Data Source Replacement Map
@@ -355,29 +366,159 @@ Copy to `tradfi/commands/earnings.md` with these changes:
 
 - [ ] **Step 5: Create screen.md**
 
-The official screen.md is minimal (references `idea-generation` skill which we don't have). Create an adapted version with:
-- Workflow: Clarify Criteria → Screen (yahoo-finance → fmp → Web Search → Chrome CDP) → Analyze Results → Deliver
-- Output: Markdown report with criteria, results table, top picks
-- Quality checklist
+The official screen.md references `idea-generation` skill — which we now have. Create an adapted version:
+- Reference the `idea-generation` skill for systematic screening
+- Data source priority: yahoo-finance → fmp → Web Search → Chrome CDP
+- Keep it concise — the heavy logic lives in the idea-generation skill
 
-- [ ] **Step 6: Commit all commands**
+- [ ] **Step 6: Create thesis.md**
+
+Fork from `equity-research/commands/thesis.md`. Adapt to reference our `thesis-tracker` skill and free data sources.
+
+- [ ] **Step 7: Create model-update.md**
+
+Fork from `equity-research/commands/model-update.md`. Adapt data source references.
+
+- [ ] **Step 8: Create debug-model.md**
+
+Fork from `financial-analysis/commands/debug-model.md`. References `audit-xls` skill.
+
+- [ ] **Step 9: Commit all commands**
 
 ```bash
 git add tradfi/commands/
-git commit -m "feat(tradfi): add comps, dcf, earnings, screen commands"
+git commit -m "feat(tradfi): add all 7 commands"
 ```
 
 ---
 
-## Chunk 4: Final Verification
+## Chunk 4: New Skills — idea-generation, thesis-tracker, audit-xls, model-update
 
-### Task 7: Final verification and integration commit
+### Task 7: Fork idea-generation skill
+
+**Files:**
+- Create: `tradfi/skills/idea-generation/SKILL.md`
+
+- [ ] **Step 1: Fetch official idea-generation SKILL.md**
+
+Fetch from: `https://raw.githubusercontent.com/anthropics/financial-services-plugins/main/equity-research/skills/idea-generation/SKILL.md`
+
+- [ ] **Step 2: Create adapted SKILL.md**
+
+Copy to `tradfi/skills/idea-generation/SKILL.md` with these changes:
+
+1. Add Data Source Priority section:
+   ```
+   ## Data Source Priority
+
+   ### Layer 1: MCP
+   1. **yahoo-finance** — Stock screener, key statistics, sector data
+   2. **financial-modeling-prep** — Financial ratios, screener API, insider trading data
+
+   ### Layer 2: Web Search
+   - finviz.com for visual screening
+   - finance.yahoo.com/screener
+
+   ### Layer 3: Chrome CDP
+   - For pages requiring login
+   ```
+
+2. Keep ALL of: 5 screen types (value/growth/quality/short/special situation), thematic sweep framework, idea presentation format, important notes
+3. Remove any references to paid MCP sources
+
+- [ ] **Step 3: Verify and commit**
+
+```bash
+git add tradfi/skills/idea-generation/SKILL.md
+git commit -m "feat(tradfi): fork idea-generation skill with free data sources"
+```
+
+### Task 8: Fork thesis-tracker skill
+
+**Files:**
+- Create: `tradfi/skills/thesis-tracker/SKILL.md`
+
+- [ ] **Step 1: Fetch and adapt**
+
+Fetch from official repo. This skill has minimal data source references — it's primarily a framework for tracking investment theses. Copy with minor adaptations:
+
+1. Keep ALL of: thesis definition, update log, scorecard, catalyst calendar, falsifiability principle
+2. Add note about data sources for thesis updates: "When updating thesis with new data, use yahoo-finance MCP for financial data and alpha-vantage MCP for earnings/transcripts"
+3. Change output format references from "Word doc" to "Markdown file" (aligned with our output rules)
+
+- [ ] **Step 2: Verify and commit**
+
+```bash
+git add tradfi/skills/thesis-tracker/SKILL.md
+git commit -m "feat(tradfi): fork thesis-tracker skill"
+```
+
+### Task 9: Fork audit-xls skill
+
+**Files:**
+- Create: `tradfi/skills/audit-xls/SKILL.md`
+
+- [ ] **Step 1: Fetch and adapt**
+
+Fetch from official repo. This skill has no data source references — it's purely about auditing spreadsheets. Adaptations:
+
+1. Remove Office JS environment references — keep only Python/openpyxl path
+2. Keep ALL of: 3 scope levels (selection/sheet/model), formula-level checks, model-integrity checks (BS balance, cash tie-out, RE rollforward), model-type-specific bugs (DCF, LBO, 3-stmt, merger), severity grading (Critical/Warning/Info), report format
+
+- [ ] **Step 2: Verify and commit**
+
+```bash
+git add tradfi/skills/audit-xls/SKILL.md
+git commit -m "feat(tradfi): fork audit-xls skill"
+```
+
+### Task 10: Fork model-update skill
+
+**Files:**
+- Create: `tradfi/skills/model-update/SKILL.md`
+
+- [ ] **Step 1: Fetch and adapt**
+
+Fetch from official repo. Adaptations:
+
+1. Add Data Source Priority section:
+   ```
+   ## Data Source Priority
+
+   ### Layer 1: MCP
+   1. **yahoo-finance** — Latest earnings data, financial statements, analyst estimates
+   2. **financial-modeling-prep** — Detailed estimates, consensus data
+   3. **alpha-vantage** — Earnings calendar, supplementary data
+
+   ### Layer 2: Web Search
+   - Company IR pages for press releases
+   - SEC EDGAR for filings
+
+   ### Layer 3: Chrome CDP
+   - For detailed filings or earnings call replays
+   ```
+
+2. Keep ALL of: 5-step workflow (identify changes → plug data → revise estimates → valuation impact → summary), important notes (reconcile, track revisions, signal vs noise)
+3. Change output format references to align with our Markdown output rules
+
+- [ ] **Step 2: Verify and commit**
+
+```bash
+git add tradfi/skills/model-update/SKILL.md
+git commit -m "feat(tradfi): fork model-update skill with free data sources"
+```
+
+---
+
+## Chunk 5: Final Verification
+
+### Task 11: Final verification and integration commit
 
 - [ ] **Step 1: Verify directory structure**
 
 Run `find tradfi/ -type f | sort` and confirm all expected files exist:
-- 4 commands
-- 5 skills with all reference files
+- 7 commands (comps, dcf, earnings, screen, thesis, model-update, debug-model)
+- 9 skills (comps-analysis, dcf-model, earnings-analysis, competitive-analysis, clean-data-xls, idea-generation, thesis-tracker, audit-xls, model-update)
 - plugin.json, .mcp.json, hooks.json
 
 - [ ] **Step 2: Verify no paid MCP references remain**

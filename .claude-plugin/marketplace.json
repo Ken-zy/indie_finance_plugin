@@ -15,6 +15,11 @@
       "name": "macro",
       "description": "Macroeconomic dashboard and news digest spanning traditional and crypto markets",
       "source": "./macro"
+    },
+    {
+      "name": "portfolio",
+      "description": "Portfolio management: tax-aware rebalancing, tax-loss harvesting, drift analysis, asset location optimization",
+      "source": "./portfolio"
     }
   ]
 }

@@ -5,7 +5,7 @@
 
 ## 概述
 
-为 indie-finance-plugin 创建项目基建，采用多插件市场架构（与 Anthropic 官方 financial-services-plugins 一致），包含三个子插件：tradfi、crypto、macro。
+为 indie-finance-plugin 创建项目基建，采用多插件市场架构（与 Anthropic 官方 financial-services-plugins 一致），包含四个子插件：tradfi、crypto、macro、portfolio。
 
 ## 架构决策
 
