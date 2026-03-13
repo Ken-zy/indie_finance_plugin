@@ -43,6 +43,7 @@ coverage/
 TASKS.md
 MEMORY.md
 .claude/worktrees/
+claude-responses/
 
 # Plugin local config
 *.local.md
