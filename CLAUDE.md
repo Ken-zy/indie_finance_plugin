@@ -8,10 +8,10 @@
 
 | 子插件 | 命令 | 数据源 |
 |--------|------|--------|
-| `tradfi` | `/comps` `/dcf` `/earnings` `/screen` `/thesis` `/model-update` `/debug-model` | Alpha Vantage (MCP) + Yahoo Finance (Web Search) |
-| `crypto` | `/token` `/defi` `/airdrop` `/onchain` | CoinGecko, Dune (MCP) + DefiLlama (Web Search) |
-| `macro` | `/dashboard` `/morning` `/catalyst` | CoinGecko (MCP) + FRED, DefiLlama (Web Search) |
-| `portfolio` | `/rebalance` `/tlh` | Yahoo Finance (Web Search) |
+| `tradfi` | `/comps` `/dcf` `/earnings` `/screen` `/thesis` `/model-update` `/debug-model` | Alpha Vantage (MCP) + Yahoo Finance (Chrome CDP) |
+| `crypto` | `/token` `/defi` `/airdrop` `/onchain` | CoinGecko, Dune (MCP) + DefiLlama (Chrome CDP) |
+| `macro` | `/dashboard` `/morning` `/catalyst` | CoinGecko (MCP) + FRED, DefiLlama (Chrome CDP) |
+| `portfolio` | `/rebalance` `/tlh` | Yahoo Finance (Chrome CDP) |
 
 另有自动触发 skill（无独立命令）：`news-digest`（新闻补充）、`competitive-analysis`（竞争分析）、`audit-xls`（电子表格审计）、`idea-generation`（投资想法筛选）。
 
@@ -97,7 +97,7 @@ Layer 3: Web Search 摘要兜底（Chrome CDP 失败时）
 | CoinGecko (Demo) | 30次/分, 10000次/月 | 官方 MCP，Crypto 首选 |
 | Alpha Vantage | 25次/天, 5次/分 | 官方 MCP，仅用于电话会议和技术指标 |
 | Dune | 15+40次/分 | 官方 MCP，链上查询 |
-| Yahoo Finance | 无官方限制 | 无官方 MCP，Web Search fallback |
-| DefiLlama | 无限制 | 无官方 MCP，Web Search fallback |
-| FRED | 120次/分 | 无官方 MCP，Web Search fallback |
-| FMP | 250次/天 | 无官方 MCP，Web Search fallback |
+| Yahoo Finance | 无官方限制 | 无官方 MCP，Chrome CDP / Web Search 兜底 |
+| DefiLlama | 无限制 | 无官方 MCP，Chrome CDP / Web Search 兜底 |
+| FRED | 120次/分 | 无官方 MCP，Chrome CDP / Web Search 兜底 |
+| FMP | 250次/天 | 无官方 MCP，Chrome CDP / Web Search 兜底 |
