@@ -50,18 +50,20 @@ Layer 3: Web Search 摘要兜底（Chrome CDP 失败时）
 
 ## 数据源-场景映射
 
-| 场景 | Layer 1 (MCP) | Layer 2 (Web Search) | Layer 3 (Chrome) |
-|------|--------------|---------------------|------------------|
-| 股票行情/财报 | — | finance.yahoo.com | 同左 |
-| 技术指标 | alpha-vantage | tradingview.com | TradingView 页面 |
-| SEC Filing | — | sec.gov/edgar | EDGAR 全文 |
-| 电话会议 | alpha-vantage | seekingalpha.com/transcripts | Seeking Alpha |
-| 分析师预期 | — | tipranks.com, wsj.com | TipRanks 页面 |
-| 加密行情 | coingecko | coingecko.com | 同左 |
-| DeFi 数据 | — | defillama.com | 同左 |
-| 链上数据 | dune | dune.com/queries | Dune 查询页面 |
-| 宏观经济 | — | fred.stlouisfed.org | 同左 |
-| 新闻 | alpha-vantage | google news search | 具体新闻站点 |
+| 场景 | Layer 1 (MCP) | Layer 2 (Chrome CDP URL) | Layer 3 (Web Search 兜底) |
+|------|--------------|--------------------------|--------------------------|
+| 股票行情/财报（美股） | — | `finance.yahoo.com/quote/{ticker}` | finance.yahoo.com |
+| 股票行情（A股） | — | `xueqiu.com/S/{code}` 或 `quote.eastmoney.com/sz{code}.html` | 东方财富/雪球 |
+| 股票行情（港股） | — | `xueqiu.com/S/{code}` 或 `finance.yahoo.com/quote/{ticker}` | 雪球/Yahoo Finance |
+| 技术指标 | alpha-vantage | `tradingview.com/chart/?symbol={ticker}` | tradingview.com |
+| SEC Filing | — | `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` | sec.gov/edgar |
+| 电话会议 | alpha-vantage | `seekingalpha.com/symbol/{ticker}/earnings/transcripts` | seekingalpha.com |
+| 分析师预期 | — | `tipranks.com/stocks/{ticker}/forecast` | tipranks.com, wsj.com |
+| 加密行情 | coingecko | `coingecko.com/en/coins/{id}` | coingecko.com |
+| DeFi 数据 | — | `defillama.com/protocol/{protocol}` | defillama.com |
+| 链上数据 | dune | `dune.com/queries/{query_id}` | dune.com |
+| 宏观经济 | — | `fred.stlouisfed.org/series/{series_id}` | fred.stlouisfed.org |
+| 新闻 | alpha-vantage | ⚠️ URL 未知 → Web Search 取文章 URL → Chrome CDP 读全文；Web Search 找不到 URL → 降 Layer 3 | Web Search 搜索摘要（google news search） |
 
 ## 输出格式规则
 
