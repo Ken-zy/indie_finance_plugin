@@ -423,7 +423,7 @@ This helps answer: "Is our target company trading rich or cheap vs. peers?"
    - Lock in units and date references
 
 2. **Gather data** (60-90 minutes)
-   - Pull from MCP data sources (yahoo-finance, financial-modeling-prep, alpha-vantage); fall back to SEC EDGAR or web search if needed
+   - Pull from alpha-vantage MCP (Layer 1), Chrome CDP (`finance.yahoo.com`, `sec.gov/edgar`, `tipranks.com`) (Layer 2); fall back to web search if needed (Layer 3)
    - Input all raw numbers in blue
    - Document sources in notes section
 

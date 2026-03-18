@@ -1,7 +1,7 @@
 ---
 description: Build a comparable company analysis with operating metrics, valuation multiples, and statistical benchmarking — outputs a professional .xlsx file
 argument-hint: <ticker_or_company> [peers...]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, mcp__alpha-vantage__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # Comparable Company Analysis
@@ -17,13 +17,13 @@ Build an institutional-grade comps table for the target company and its peers.
 
 Fetch data using the three-layer fallback:
 
-### Layer 1: MCP Data Sources (preferred)
-1. **yahoo-finance** — stock quotes, key statistics, financial statements, company info
-2. **financial-modeling-prep** — detailed financials, ratios, enterprise value, peer comparison
-3. **alpha-vantage** — technical indicators, additional fundamentals
+### Layer 1: MCP
+- **alpha-vantage** — 技术指标、财报日历（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For pages requiring login or dynamic rendering
+- `finance.yahoo.com/quote/{ticker}` — 股票行情、财报、关键指标
+- `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` — SEC Filing
+- `tipranks.com/stocks/{ticker}/forecast` — 分析师预期
 
 ### Layer 3: Web Search
 - finance.yahoo.com, macrotrends.net for financial data

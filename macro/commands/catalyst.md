@@ -1,7 +1,7 @@
 ---
 description: 催化剂日历 — 财报/经济数据/FOMC/代币解锁/空投快照/协议升级
 argument-hint: [tickers_or_tokens...] [horizon: 2w|month|quarter]
-allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, WebFetch
+allowed-tools: mcp__coingecko__*, WebSearch, WebFetch
 ---
 
 # Catalyst Calendar
@@ -16,12 +16,11 @@ allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, We
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **fred** — 经济数据发布日期
-- **coingecko** — 代币事件
-- **defillama** — 协议事件
+- **coingecko** — 代币事件、项目动态
 
 ### Layer 2: Chrome CDP
-- 需登录的日历源
+- `fred.stlouisfed.org/series/{series_id}` — 经济数据发布日期（CPI、非农、GDP）
+- `defillama.com/protocol/{protocol}` — 协议 TVL 变动、DeFi 事件
 
 ### Layer 3: Web Search
 - 财报日历、FOMC 日期、代币解锁日历、空投日期、加密会议

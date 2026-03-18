@@ -125,7 +125,7 @@ Before delivering earnings update, verify all items below:
 - [ ] Source citations include page numbers or slide numbers where applicable
 
 **Beat/Miss Citations:**
-- [ ] Beat/miss analysis cites consensus source (financial-modeling-prep, alpha-vantage, or web search)
+- [ ] Beat/miss analysis cites consensus source (alpha-vantage MCP, Chrome CDP, or web search)
 - [ ] Consensus source includes "as of" date (pre-earnings close)
 - [ ] Company reported results cited to earnings release or 10-Q
 

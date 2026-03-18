@@ -1,7 +1,7 @@
 ---
 description: Run systematic stock screens to surface investment ideas — value, growth, quality, short, or thematic
 argument-hint: <screen_type> [sector] [criteria...]
-allowed-tools: Bash(python3:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # Stock Screen
@@ -16,11 +16,11 @@ Run a systematic stock screen and present investment idea candidates.
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **yahoo-finance** — stock screener, key statistics, sector data, insider trading
-2. **financial-modeling-prep** — financial ratios, screener API, insider data, analyst ratings
+- **alpha-vantage** — 技术指标、行业数据（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For pages requiring login or dynamic rendering
+- `finance.yahoo.com/quote/{ticker}` — 关键指标、行业数据、内部人交易
+- `tipranks.com/stocks/{ticker}/forecast` — 分析师评级
 
 ### Layer 3: Web Search
 - finviz.com for visual screening

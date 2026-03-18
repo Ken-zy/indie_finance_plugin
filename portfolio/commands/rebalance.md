@@ -1,7 +1,7 @@
 ---
 description: 投资组合再平衡 — 偏离度分析/再平衡交易建议/税务感知/交易成本优化
 argument-hint: [portfolio_csv_or_description] [new_cash: amount]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), WebSearch, WebFetch
 ---
 
 # Portfolio Rebalance
@@ -16,9 +16,10 @@ allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, WebSearch, W
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **yahoo-finance** — 实时股价/ETF价格/持仓市值
+- （无）portfolio 子插件无已批准的 MCP server
 
 ### Layer 2: Chrome CDP
+- `finance.yahoo.com/quote/{ticker}` — 实时股价/ETF价格/持仓市值
 - 券商页面
 
 ### Layer 3: Web Search

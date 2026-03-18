@@ -1,7 +1,7 @@
 ---
 description: 宏观经济看板 — 利率/通胀/就业/市场情绪/加密宏观/经济日历
 argument-hint: [scope: rates|inflation|jobs|sentiment|crypto-macro|calendar|all]
-allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, WebFetch
+allowed-tools: mcp__coingecko__*, WebSearch, WebFetch
 ---
 
 # Macro Dashboard
@@ -16,12 +16,11 @@ allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, We
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **fred** — 利率/国债/CPI/PCE/就业/GDP/美元指数
-- **defillama** — 稳定币总市值/加密 TVL
-- **coingecko** — BTC/ETH/全球加密市值
+- **coingecko** — BTC/ETH 价格/全球加密市值/市场情绪
 
 ### Layer 2: Chrome CDP
-- 需登录的数据源
+- `fred.stlouisfed.org/series/{series_id}` — 利率/国债/CPI/PCE/就业/GDP/美元指数
+- `defillama.com` — 稳定币总市值/全球加密 TVL/DeFi 总量
 
 ### Layer 3: Web Search
 - 经济数据日历、FOMC 声明、VIX、恐惧贪婪指数

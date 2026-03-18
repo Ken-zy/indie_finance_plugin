@@ -1,7 +1,7 @@
 ---
 description: 税务亏损收割 (TLH) — 识别未实现亏损/推荐替代标的/Wash Sale 检查/节税估算
 argument-hint: [portfolio_csv_with_cost_basis]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), WebSearch, WebFetch
 ---
 
 # Tax-Loss Harvesting
@@ -16,9 +16,10 @@ allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, WebSearch, W
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **yahoo-finance** — 实时价格/历史价格/ETF 信息
+- （无）portfolio 子插件无已批准的 MCP server
 
 ### Layer 2: Chrome CDP
+- `finance.yahoo.com/quote/{ticker}` — 实时价格/历史价格/ETF 信息
 - 券商税务报告
 
 ### Layer 3: Web Search

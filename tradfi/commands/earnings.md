@@ -1,7 +1,7 @@
 ---
 description: Create a professional earnings update report analyzing quarterly results — beat/miss, updated estimates, thesis impact
 argument-hint: <ticker_or_company> [quarter, e.g. Q3 2024]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, mcp__alpha-vantage__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # Earnings Update
@@ -16,13 +16,11 @@ Create an institutional-quality earnings update report (8-12 pages) for the targ
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **alpha-vantage** — earnings call transcripts, earnings calendar
-2. **yahoo-finance** — earnings results, financial statements, analyst estimates
-3. **financial-modeling-prep** — detailed estimates, historical earnings, analyst ratings
+- **alpha-vantage** — 电话会议转录、财报日历（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- Seeking Alpha (may require login for full transcripts)
-- Earnings call replay pages
+- `finance.yahoo.com/quote/{ticker}` — 财报数据、分析师预期
+- `seekingalpha.com/symbol/{ticker}/earnings/transcripts` — 电话会议记录全文
 
 ### Layer 3: Web Search
 - seekingalpha.com for earnings transcripts

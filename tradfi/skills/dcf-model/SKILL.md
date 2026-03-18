@@ -1215,9 +1215,9 @@ This approach centralizes scenario logic, making the model easier to audit and m
 
 ### Available Data Sources
 
-- **MCP servers**: yahoo-finance (historical financials, price, shares, balance sheet), financial-modeling-prep (DCF inputs, WACC, estimates, growth rates)
-- **Web search**: finance.yahoo.com, macrotrends.net for historical data; SEC EDGAR for 10-K/10-Q filings
-- **Chrome CDP**: For detailed filings or pages with bot detection
+- **MCP (Layer 1)**: alpha-vantage (technical indicators, 25次/天限额)
+- **Chrome CDP (Layer 2)**: `finance.yahoo.com/quote/{ticker}` (historical financials, price, shares, balance sheet), `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` (10-K/10-Q filings)
+- **Web Search (Layer 3)**: finance.yahoo.com, macrotrends.net for historical data; SEC EDGAR for filings
 - **User-provided data**: Historical financials, consensus estimates
 
 ## Final Output Checklist

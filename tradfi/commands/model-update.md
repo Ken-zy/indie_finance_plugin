@@ -1,7 +1,7 @@
 ---
 description: Update a financial model with new data — plug earnings, revise estimates, recalculate valuation after quarterly results or guidance changes
 argument-hint: <ticker_or_company> [trigger: earnings|guidance|macro|event]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, mcp__alpha-vantage__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # Model Update
@@ -16,12 +16,11 @@ Update an existing financial model with new data and recalculate valuation.
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **yahoo-finance** — latest earnings data, financial statements, analyst estimates
-2. **financial-modeling-prep** — detailed estimates, consensus data
-3. **alpha-vantage** — earnings calendar, supplementary data
+- **alpha-vantage** — 电话会议转录、技术指标（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For detailed filings or earnings call replays
+- `finance.yahoo.com/quote/{ticker}` — 最新财报数据、分析师预期
+- `seekingalpha.com/symbol/{ticker}/earnings/transcripts` — 电话会议记录
 
 ### Layer 3: Web Search
 - Company IR pages for press releases

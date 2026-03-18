@@ -1,7 +1,7 @@
 ---
 description: Build a discounted cash flow model with WACC, projections, sensitivity analysis — outputs a professional .xlsx file
 argument-hint: <ticker_or_company> [projection_years]
-allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, mcp__alpha-vantage__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), Bash(pip:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # DCF Model
@@ -15,13 +15,12 @@ Build an institutional-quality DCF valuation model for the target company.
 
 ## Data Source Priority
 
-### Layer 1: MCP Data Sources (preferred)
-1. **yahoo-finance** — financial statements, key statistics, current price, shares outstanding
-2. **financial-modeling-prep** — detailed financials, analyst estimates, enterprise value components
-3. **alpha-vantage** — supplementary fundamentals, earnings data
+### Layer 1: MCP
+- **alpha-vantage** — 技术指标（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For pages requiring login or dynamic rendering
+- `finance.yahoo.com/quote/{ticker}` — 历史财务数据、现价、股本、资产负债表
+- `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` — 10-K/10-Q filing
 
 ### Layer 3: Web Search
 - SEC EDGAR for 10-K/10-Q filings

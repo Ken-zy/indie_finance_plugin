@@ -1,7 +1,7 @@
 ---
 description: Create, update, or review an investment thesis — track pillars, catalysts, conviction, and data points over time
 argument-hint: <ticker_or_company> [update_context]
-allowed-tools: Bash(python3:*), mcp__yahoo-finance__*, mcp__financial-modeling-prep__*, mcp__alpha-vantage__*, WebSearch, WebFetch
+allowed-tools: Bash(python3:*), mcp__alpha-vantage__*, WebSearch, WebFetch
 ---
 
 # Investment Thesis
@@ -16,12 +16,11 @@ Create, update, or review an investment thesis for the target company.
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **yahoo-finance** — financial data, key statistics, recent news
-2. **financial-modeling-prep** — analyst estimates, ratings, financial ratios
-3. **alpha-vantage** — earnings transcripts, supplementary data
+- **alpha-vantage** — 电话会议转录、技术指标（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For pages requiring login or dynamic rendering
+- `finance.yahoo.com/quote/{ticker}` — 财务数据、关键指标
+- `tipranks.com/stocks/{ticker}/forecast` — 分析师评级
 
 ### Layer 3: Web Search
 - Company IR pages for press releases

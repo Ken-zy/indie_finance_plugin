@@ -1,7 +1,7 @@
 ---
 description: 每日晨会笔记 — 隔夜市场动态/关键事件/交易想法，覆盖传统金融和加密市场
 argument-hint: [focus: stocks|crypto|macro|all]
-allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, WebFetch
+allowed-tools: mcp__coingecko__*, WebSearch, WebFetch
 ---
 
 # Morning Note
@@ -16,12 +16,11 @@ allowed-tools: mcp__fred__*, mcp__coingecko__*, mcp__defillama__*, WebSearch, We
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **fred** — 经济数据发布
-- **coingecko** — 加密市场隔夜表现
-- **defillama** — DeFi TVL 变动
+- **coingecko** — 加密市场隔夜表现、重大价格变动
 
 ### Layer 2: Chrome CDP
-- 需登录的新闻源
+- `fred.stlouisfed.org/series/{series_id}` — 经济数据发布（利率变动、就业数据等）
+- `defillama.com/protocol/{protocol}` — DeFi TVL 变动、协议重大事件
 
 ### Layer 3: Web Search
 - 财经新闻、期货/盘前数据、加密新闻

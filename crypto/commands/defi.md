@@ -1,7 +1,7 @@
 ---
 description: DeFi protocol analysis — TVL, multi-chain deployment, yield analysis, competitive comparison
 argument-hint: <protocol_name> [chain]
-allowed-tools: mcp__defillama__*, mcp__coingecko__*, WebSearch, WebFetch
+allowed-tools: mcp__coingecko__*, WebSearch, WebFetch
 ---
 
 # DeFi Protocol Analysis
@@ -15,14 +15,11 @@ allowed-tools: mcp__defillama__*, mcp__coingecko__*, WebSearch, WebFetch
 
 ## Data Source Priority
 
-### Layer 1 Primary: MCP
-- **defillama** — TVL/交易量/费用收入/收益率/链分布
-
-### Layer 1 Secondary: MCP
-- **coingecko** — 协议代币数据/DEX 补充数据
+### Layer 1: MCP
+- **coingecko** — 协议代币数据/DEX 补充数据(GeckoTerminal)
 
 ### Layer 2: Chrome CDP
-- 需登录的页面
+- `defillama.com/protocol/{protocol}` — TVL/交易量/费用收入/收益率/链分布
 
 ### Layer 3: Web Search
 - 协议文档、审计报告、治理提案

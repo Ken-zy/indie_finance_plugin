@@ -1,7 +1,7 @@
 ---
 description: 空投项目评估 — 六维度评分(0-5)/档位判定(Sprint/中等/低保)/P-xxx 格式输出
 argument-hint: <project_name>
-allowed-tools: mcp__coingecko__*, mcp__defillama__*, WebSearch, WebFetch
+allowed-tools: mcp__coingecko__*, WebSearch, WebFetch
 ---
 
 # Airdrop Evaluation
@@ -17,9 +17,9 @@ allowed-tools: mcp__coingecko__*, mcp__defillama__*, WebSearch, WebFetch
 
 ### Layer 1: MCP
 - **coingecko** — 代币信息（如已发币）
-- **defillama** — TVL 趋势、协议数据
 
 ### Layer 2: Chrome CDP
+- `defillama.com/protocol/{protocol}` — TVL 趋势、协议数据
 - 官网、文档、Discord
 
 ### Layer 3: Web Search

@@ -32,10 +32,10 @@ Training data is OUTDATED. Actively search for and retrieve the MOST RECENT earn
 
 **MANDATORY STEP 2: SEARCH FOR "LATEST EARNINGS"**
 
-**MCP-first approach (preferred):**
-1. **yahoo-finance** MCP: Query for latest earnings results, financial statements, analyst estimates
-2. **alpha-vantage** MCP: Query for earnings call transcripts and earnings calendar
-3. **financial-modeling-prep** MCP: Query for detailed estimates, historical earnings, analyst ratings
+**Three-layer fallback approach:**
+1. **alpha-vantage** MCP: Query for earnings call transcripts and earnings calendar (Layer 1)
+2. **Chrome CDP** (`finance.yahoo.com/quote/{ticker}`): Earnings results, financial statements, analyst estimates (Layer 2)
+3. **Chrome CDP** (`seekingalpha.com/symbol/{ticker}/earnings/transcripts`): Full transcripts (Layer 2)
 
 **Web search fallback:**
 - Search queries:
@@ -145,7 +145,7 @@ After SEARCHING FOR and confirming the latest quarter, collect the following:
 **Primary Materials (REQUIRED):**
 
 - **Earnings press release** - Usually on company investor relations site under "Press Releases" or "News"
-  - **MCP first**: Query **yahoo-finance** for latest earnings data
+  - **Chrome CDP first**: Navigate to `finance.yahoo.com/quote/{ticker}` for latest earnings data
   - **Web fallback**: Navigate to IR site and find the actual press release
   - Search patterns: "[Company name] latest earnings", "[Company name] Q[X] [Year] earnings results"
   - Look for PDF or HTML version
