@@ -14,14 +14,11 @@ description: |
 
 ## Data Source Priority
 
-### Layer 1 Primary: MCP
-- **defillama** — TVL/交易量/费用收入/收益率/链分布
-
-### Layer 1 Secondary: MCP
+### Layer 1: MCP
 - **coingecko** — 协议代币数据/DEX 补充数据(GeckoTerminal)
 
 ### Layer 2: Chrome CDP
-- 需登录的页面
+- `defillama.com/protocol/{protocol}` — TVL/交易量/费用收入/收益率/链分布
 
 ### Layer 3: Web Search
 - 协议文档、审计报告、治理提案
@@ -36,7 +33,7 @@ description: |
 - 确认协议的 defillama slug
 
 ### Step 2: Fetch Core Metrics
-通过 defillama MCP 获取：
+通过 Chrome CDP（`defillama.com/protocol/{protocol}`）获取：
 - 当前 TVL（USD 计价）
 - TVL 变化：7d/30d
 - 链分布（各链 TVL）
@@ -44,13 +41,13 @@ description: |
 - 费用/收入（如可获取）
 
 ### Step 3: Fetch Yield Data
-通过 defillama MCP 获取：
+通过 Chrome CDP（`defillama.com/protocol/{protocol}`）获取：
 - 主要池子 APY 排名
 - 稳定池 vs 波动池收益对比
 - IL（无常损失）风险提示
 
 ### Step 4: Fetch Competitors
-通过 defillama MCP 获取同类协议：
+通过 Chrome CDP（`defillama.com`）获取同类协议：
 - 同赛道 TVL 排名
 - 交易量对比
 - 费用/收入对比

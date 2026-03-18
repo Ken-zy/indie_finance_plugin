@@ -15,9 +15,9 @@ description: |
 
 ### Layer 1: MCP
 - **coingecko** — 代币信息（如已发币）
-- **defillama** — TVL 趋势、协议数据
 
 ### Layer 2: Chrome CDP
+- `defillama.com/protocol/{protocol}` — TVL 趋势、协议数据
 - 官网、文档、Discord
 
 ### Layer 3: Web Search

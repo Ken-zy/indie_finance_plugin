@@ -56,7 +56,7 @@ Always annotate: "Source: [source name]" on each data point.
 
 ## Quality Checklist
 
-- [ ] 价格来自实时 MCP
+- [ ] 价格来自实时数据源（Chrome CDP / Web Search）
 - [ ] 权重之和等于 100%
 - [ ] 调整金额净为 0（或等于新增资金）
 - [ ] 调整股数取整

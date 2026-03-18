@@ -14,9 +14,10 @@ description: |
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **yahoo-finance** — 实时价格/历史价格/ETF 信息/相关标的搜索
+- （无）portfolio 子插件无已批准的 MCP server
 
 ### Layer 2: Chrome CDP
+- `finance.yahoo.com/quote/{ticker}` — 实时价格/历史价格/ETF 信息/相关标的搜索
 - 券商税务报告页面（如需）
 
 ### Layer 3: Web Search
@@ -31,7 +32,7 @@ description: |
 - 如用户提供 CSV/券商导出文件，解析文件
 
 ### Step 2: Fetch Current Prices
-通过 yahoo-finance MCP 获取所有持仓当前价格。
+通过 Chrome CDP（`finance.yahoo.com/quote/{ticker}`）获取所有持仓当前价格。
 
 ### Step 3: Identify TLH Candidates
 计算每个持仓的未实现盈亏：
@@ -123,7 +124,7 @@ TLH 候选条件：
 
 ## Quality Checklist
 
-- [ ] 所有价格来自实时 MCP
+- [ ] 所有价格来自实时数据源（Chrome CDP / Web Search）
 - [ ] 持有期正确计算（短期 <1年 vs 长期 ≥1年）
 - [ ] 替代标的非"实质相同"证券
 - [ ] Wash Sale 30 天规则明确提醒

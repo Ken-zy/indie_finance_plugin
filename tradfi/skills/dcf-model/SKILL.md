@@ -73,11 +73,11 @@ Fetch data from MCP servers, user provided data, and the web.
 **Data Source Priority:**
 
 **Layer 1: MCP**
-1. **yahoo-finance** — Historical financials, current price, shares outstanding, balance sheet
-2. **financial-modeling-prep** — DCF inputs, WACC components, analyst estimates, growth rates
+- **alpha-vantage** — 技术指标（25次/天限额）
 
 **Layer 2: Chrome CDP**
-- For detailed filings or pages with bot detection
+- `finance.yahoo.com/quote/{ticker}` — 历史财务数据、现价、股本、资产负债表
+- `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` — 10-K/10-Q filing
 
 **Layer 3: Web Search**
 - finance.yahoo.com, macrotrends.net for historical data
@@ -1169,17 +1169,16 @@ This approach centralizes scenario logic, making the model easier to audit and m
 ### At Start of DCF Build
 
 1. **Gather market data**:
-   - Use yahoo-finance MCP for current stock prices, beta, shares outstanding
-   - Use financial-modeling-prep MCP for WACC components and analyst estimates
-   - Use Chrome CDP (finance.yahoo.com, macrotrends.net) if MCP unavailable
-   - Fall back to web search if Chrome CDP also fails
+   - Use alpha-vantage MCP for technical indicators (Layer 1)
+   - Use Chrome CDP (`finance.yahoo.com/quote/{ticker}`) for current stock prices, beta, shares outstanding (Layer 2)
+   - Fall back to web search if Chrome CDP also fails (Layer 3)
    - Request from user if specific data is needed
 
 2. **Gather historical financials**:
-   - Use yahoo-finance or financial-modeling-prep MCP for structured data
-   - Use Chrome CDP (sec.gov/cgi-bin/browse-edgar) for 10-K/10-Q filings as fallback
-   - Fall back to web search if Chrome CDP fails
-   - Request from user if not available via MCP or web
+   - Use Chrome CDP (`finance.yahoo.com/quote/{ticker}`) for structured financial data (Layer 2)
+   - Use Chrome CDP (`sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}`) for 10-K/10-Q filings
+   - Fall back to web search if Chrome CDP fails (Layer 3)
+   - Request from user if not available via Chrome CDP or web
 
 3. **Begin model construction** using the DCF methodology detailed in this skill
 

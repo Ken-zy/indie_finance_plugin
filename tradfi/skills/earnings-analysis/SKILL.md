@@ -32,13 +32,11 @@ Use when the user requests:
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **alpha-vantage** — Earnings call transcripts, earnings calendar
-2. **yahoo-finance** — Earnings results, financial statements, analyst estimates
-3. **financial-modeling-prep** — Detailed estimates, historical earnings, analyst ratings
+- **alpha-vantage** — 电话会议转录、财报日历（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- Seeking Alpha (may require login for full transcripts)
-- Earnings call replay pages
+- `finance.yahoo.com/quote/{ticker}` — 财报数据、分析师预期
+- `seekingalpha.com/symbol/{ticker}/earnings/transcripts` — 电话会议记录全文
 
 ### Layer 3: Web Search
 - seekingalpha.com/earnings/transcripts

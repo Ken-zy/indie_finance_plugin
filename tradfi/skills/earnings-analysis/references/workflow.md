@@ -191,7 +191,7 @@ After SEARCHING FOR and confirming the latest quarter, collect the following:
   - From last earnings update or initiation report
   - Check what was estimated for this quarter's metrics
 
-- **Consensus estimates** - From Yahoo Finance, financial-modeling-prep MCP, or web search
+- **Consensus estimates** - From Yahoo Finance (Chrome CDP) or web search
   - CRITICAL: Use estimates from BEFORE earnings release
   - Look for "as of [date before earnings]" to ensure pre-announcement consensus
   - Needed for beat/miss analysis

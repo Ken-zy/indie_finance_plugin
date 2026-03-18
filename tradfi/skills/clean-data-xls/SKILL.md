@@ -15,9 +15,9 @@ Use Python with openpyxl to read and write .xlsx files. Read cell values via `ws
 
 When the spreadsheet contains financial data that needs cross-referencing or enrichment during cleaning, use free data APIs:
 
-- **yahoo-finance MCP** — real-time and historical prices, fundamentals, key statistics
-- **alpha-vantage MCP** — time-series data, company overviews, income statements, balance sheets
-- **financial-modeling-prep MCP** — financial statements, ratios, SEC filings, company profiles
+- **alpha-vantage MCP** (Layer 1) — time-series data, technical indicators, company overviews
+- **Chrome CDP** (Layer 2) — `finance.yahoo.com/quote/{ticker}` for real-time prices, fundamentals, key statistics
+- **Web Search** (Layer 3) — finance.yahoo.com, SEC EDGAR for financial statements, ratios
 
 Use these to validate suspicious values (e.g. a stock price that looks like an outlier) or to fill missing data points when the user requests it.
 

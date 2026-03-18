@@ -5,7 +5,7 @@ description: Maintain and update investment theses for portfolio positions and w
 
 # Thesis Tracker
 
-When updating thesis with new data, use yahoo-finance MCP for financial data and alpha-vantage MCP for earnings/transcripts. Follow the three-layer fallback: MCP → Chrome CDP → Web Search.
+When updating thesis with new data, use alpha-vantage MCP for earnings/transcripts (Layer 1), Yahoo Finance via Chrome CDP for financial data (Layer 2). Follow the three-layer fallback: MCP → Chrome CDP → Web Search.
 
 ## Workflow
 

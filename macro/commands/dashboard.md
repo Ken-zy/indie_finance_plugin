@@ -54,7 +54,7 @@ Always annotate: "Source: [source name]" on each data point.
 
 - [ ] FRED 数据系列 ID 正确
 - [ ] 当前值和前值都已获取
-- [ ] 加密数据来自实时 MCP
+- [ ] 加密数据来自实时数据源（CoinGecko MCP / Chrome CDP）
 - [ ] 日历覆盖未来 2 周重要事件
 - [ ] 降息预期来自实时数据（非猜测）
 - [ ] 数据时效性标注

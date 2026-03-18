@@ -65,7 +65,7 @@ allowed-tools: Bash(python3:*), Bash(pip:*), mcp__yahoo-finance__*, WebSearch, W
 
 ## Quality Checklist
 
-- [ ] 价格来自实时 MCP
+- [ ] 价格来自实时数据源（Chrome CDP / Web Search）
 - [ ] 持有期正确（短期 <1年 / 长期 ≥1年）
 - [ ] 替代标的非"实质相同"
 - [ ] Wash Sale 30 天规则已提醒

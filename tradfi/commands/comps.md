@@ -47,7 +47,7 @@ For each company, retrieve:
 - **Market Cap**, **Enterprise Value**
 - **Free Cash Flow** (if available)
 
-Query yahoo-finance MCP first. Fill gaps with financial-modeling-prep MCP, then alpha-vantage MCP. Use Chrome CDP if MCP data is incomplete. Fall back to web search if Chrome CDP also fails.
+Query alpha-vantage MCP first (Layer 1). Use Chrome CDP (`finance.yahoo.com/quote/{ticker}`, `sec.gov/edgar`, `tipranks.com`) for financial data (Layer 2). Fall back to web search if Chrome CDP also fails (Layer 3).
 
 ### Step 3: Show Inputs for Confirmation
 Present the raw data block to the user. Confirm all figures and their sources before building formulas. Do NOT build the entire sheet end-to-end without checkpoints.

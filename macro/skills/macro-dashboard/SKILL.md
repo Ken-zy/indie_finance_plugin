@@ -14,12 +14,11 @@ description: |
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **fred** — 利率/国债收益率/CPI/PCE/就业数据/GDP/美元指数
-- **defillama** — 稳定币总市值/全球加密 TVL/DeFi 总量
 - **coingecko** — BTC/ETH 价格/全球加密市值/市场情绪
 
 ### Layer 2: Chrome CDP
-- 需登录的数据源
+- `fred.stlouisfed.org/series/{series_id}` — 利率/国债收益率/CPI/PCE/就业数据/GDP/美元指数
+- `defillama.com/protocol/{protocol}` — 稳定币总市值/全球加密 TVL/DeFi 总量
 
 ### Layer 3: Web Search
 - 经济数据发布日历、FOMC 声明、市场评论
@@ -39,7 +38,7 @@ description: |
 - `calendar` — 仅未来 2 周数据发布日历
 
 ### Step 2: Fetch Traditional Macro Data
-通过 FRED MCP 获取：
+通过 Chrome CDP（`fred.stlouisfed.org/series/{series_id}`）获取：
 
 **利率环境:**
 - 联邦基金利率 (FEDFUNDS)
@@ -69,7 +68,7 @@ description: |
 - 主要股指表现（finance.yahoo.com/quote/%5EGSPC 等）
 
 ### Step 4: Fetch Crypto Macro
-通过 CoinGecko + DefiLlama MCP 获取：
+通过 CoinGecko MCP + Chrome CDP（`defillama.com`）获取：
 - BTC 价格 + 7d/30d 变化
 - ETH 价格 + 7d/30d 变化
 - 全球加密总市值

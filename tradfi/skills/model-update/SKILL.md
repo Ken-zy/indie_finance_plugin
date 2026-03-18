@@ -8,12 +8,11 @@ description: Update financial models with new data — quarterly earnings, manag
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **yahoo-finance** — Latest earnings data, financial statements, analyst estimates
-2. **financial-modeling-prep** — Detailed estimates, consensus data
-3. **alpha-vantage** — Earnings call transcripts, technical indicators only (25次/天 limit)
+- **alpha-vantage** — 电话会议转录、技术指标（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- For detailed filings or earnings call replays
+- `finance.yahoo.com/quote/{ticker}` — 最新财报数据、分析师预期
+- `seekingalpha.com/symbol/{ticker}/earnings/transcripts` — 电话会议记录
 
 ### Layer 3: Web Search
 - Company IR pages for press releases

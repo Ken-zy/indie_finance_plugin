@@ -10,12 +10,11 @@ Build a complete competitive analysis deck. This is a two-phase process: gather 
 ## Data Source Priority
 
 ### Layer 1: MCP
-1. **yahoo-finance** — Company financials, market data, competitor info, historical prices
-2. **alpha-vantage** — Real-time and historical market data, technical indicators, sector performance
-3. **financial-modeling-prep** — Industry data, peer comparison, financial statements, market share estimates
+- **alpha-vantage** — 技术指标、行业数据（25次/天限额）
 
 ### Layer 2: Chrome CDP
-- Pages with dynamic content or login requirements
+- `finance.yahoo.com/quote/{ticker}` — 公司财务、市场数据、竞争对手信息
+- `sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker}` — 行业Filing
 
 ### Layer 3: Web Search
 - Company investor relations pages

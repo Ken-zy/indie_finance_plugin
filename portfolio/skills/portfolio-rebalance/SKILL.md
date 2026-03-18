@@ -13,9 +13,10 @@ description: |
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **yahoo-finance** — 实时股价/ETF价格/持仓市值计算
+- （无）portfolio 子插件无已批准的 MCP server
 
 ### Layer 2: Chrome CDP
+- `finance.yahoo.com/quote/{ticker}` — 实时股价/ETF价格/持仓市值计算
 - 券商账户页面（如需）
 
 ### Layer 3: Web Search
@@ -41,7 +42,7 @@ description: |
 - 目标可按资产类别或按个股/ETF 设定
 
 ### Step 3: Fetch Current Prices
-通过 yahoo-finance MCP 获取所有持仓的当前价格，计算：
+通过 Chrome CDP（`finance.yahoo.com/quote/{ticker}`）获取所有持仓的当前价格，计算：
 - 每个持仓的当前市值
 - 当前权重（占总市值百分比）
 - 总组合市值
@@ -108,7 +109,7 @@ description: |
 
 ## Quality Checklist
 
-- [ ] 所有持仓价格来自实时 MCP（非训练数据）
+- [ ] 所有持仓价格来自实时数据源（Chrome CDP / Web Search，非训练数据）
 - [ ] 权重之和等于 100%
 - [ ] 调整金额之和净为 0（或等于新增资金）
 - [ ] 调整股数取整（非小数股）

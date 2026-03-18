@@ -42,11 +42,10 @@ Do NOT rely on training data for earnings figures. Always fetch live data.
 ## Workflow
 
 ### Phase 1: Data Collection (30-60 min)
-1. Query yahoo-finance MCP for latest earnings results and financial statements
-2. Query alpha-vantage MCP for earnings call transcript and calendar
-3. Query financial-modeling-prep MCP for estimates and analyst ratings
-4. Use Chrome CDP for content behind login walls if MCP data is incomplete
-5. Fall back to web search (Seeking Alpha, Yahoo Finance, SEC EDGAR) if Chrome CDP also fails
+1. Query alpha-vantage MCP for earnings call transcript and calendar (Layer 1)
+2. Use Chrome CDP (`finance.yahoo.com/quote/{ticker}`) for earnings results and financial statements (Layer 2)
+3. Use Chrome CDP (`seekingalpha.com/symbol/{ticker}/earnings/transcripts`) for full transcripts (Layer 2)
+4. Fall back to web search (Seeking Alpha, Yahoo Finance, SEC EDGAR) if Chrome CDP also fails (Layer 3)
 
 ### Phase 2: Beat/Miss Analysis
 For each key metric, calculate:

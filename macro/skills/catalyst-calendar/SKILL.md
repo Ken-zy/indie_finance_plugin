@@ -14,12 +14,11 @@ description: |
 ## Data Source Priority
 
 ### Layer 1: MCP
-- **fred** — 经济数据发布日期（CPI、非农、GDP）
 - **coingecko** — 代币事件、项目动态
-- **defillama** — 协议 TVL 变动、DeFi 事件
 
 ### Layer 2: Chrome CDP
-- 需登录的日历源
+- `fred.stlouisfed.org/series/{series_id}` — 经济数据发布日期（CPI、非农、GDP）
+- `defillama.com/protocol/{protocol}` — 协议 TVL 变动、DeFi 事件
 
 ### Layer 3: Web Search
 - 财报日历（公司 IR 页面）
