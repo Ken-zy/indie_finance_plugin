@@ -90,7 +90,10 @@ if [ -n "$MCP_CG" ] && [ -n "$STORED_CG" ]; then
   exit 0
 elif [ -z "$MCP_CG" ] && [ -n "$STORED_CG" ]; then
   # keys.json 有但 mcp 为空 → 恢复
-  if is_git_tracked "$CRYPTO_MCP_JSON"; then
+  if [ ! -f "$CRYPTO_MCP_JSON" ]; then
+    echo "macro 插件检测到 keys.json 中已有 CoinGecko API key，但 crypto 插件的 .mcp.json 不存在，跳过恢复。"
+    echo "请确认 crypto 插件已安装，或手动运行 /setup 配置。"
+  elif is_git_tracked "$CRYPTO_MCP_JSON"; then
     echo "macro 插件检测到 keys.json 中已有 API key，但当前处于源码仓库中，跳过自动写入 crypto/.mcp.json。"
     echo "请在插件安装后的环境中使用，或手动运行 /setup 配置。"
   else
