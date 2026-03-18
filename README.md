@@ -8,22 +8,24 @@
 
 ### 1. 安装插件
 
-最简单的方式：直接告诉 Claude Code：
-
-> 请帮我安装 Ken-zy/indie_finance_plugin 这个插件
-
-Claude 会自动完成后续步骤。也可以手动执行：
+在终端中添加插件市场：
 
 ```bash
-# 添加插件市场
-/plugin marketplace add Ken-zy/indie_finance_plugin
-
-# 安装需要的子插件（按需选择）
-/plugin install tradfi      # 传统金融分析
-/plugin install crypto      # 加密市场分析
-/plugin install macro       # 宏观经济
-/plugin install portfolio   # 投资组合管理
+claude plugin marketplace add Ken-zy/indie_finance_plugin
 ```
+
+然后在 Claude Code 会话内安装子插件：
+
+1. 输入 `/plugin` → 进入 **Discover** 标签页
+2. 用 **Space** 键逐个选中需要的子插件，**Enter** 确认安装
+3. 安装完成后输入 `/reload-plugins` 激活
+
+| 子插件 | 用途 |
+|--------|------|
+| tradfi | 传统金融分析 |
+| crypto | 加密市场分析 |
+| macro | 宏观经济 |
+| portfolio | 投资组合管理 |
 
 ### 2. 配置 API Key
 
